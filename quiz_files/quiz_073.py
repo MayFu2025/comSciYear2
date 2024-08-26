@@ -9,3 +9,10 @@ def check_error_with_parity_bit(bits:str) -> bool:
     elif (bits[0]=='1') and (count % 2 != 0):  # Should have even number of 1s
         has_error = True
     return has_error
+
+
+has_error = check_error_with_parity_bit('1010101')
+if has_error:
+    print(f'There is an error in the data.')
+else:
+    print('The data is correct.')
