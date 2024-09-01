@@ -1,4 +1,4 @@
-# Quiz 075
+# Quiz 075 & 076
 from matplotlib import pyplot as plt
 
 def find_num_of_parity_bits(len_msg:int) -> int:
@@ -18,3 +18,11 @@ plt.plot(x, y, color="gray")
 plt.xlabel("Length of Message", fontsize=15)
 plt.ylabel("Efficiency", fontsize=15)
 plt.show()
+
+
+def find_parity_indices(k: int) -> list[int]:
+    positions = []
+    for n in range(k):
+        positions.append((2**n)-1)
+    return positions
+
