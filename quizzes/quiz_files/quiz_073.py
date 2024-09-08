@@ -11,6 +11,7 @@ def check_error_with_parity_bit(bits:str) -> bool:
     return has_error
 
 
+# Check if it works
 has_error = check_error_with_parity_bit('1010101')
 if has_error:
     print(f'There is an error in the data.')
