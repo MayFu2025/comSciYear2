@@ -1,10 +1,11 @@
 # Quiz 075
 from matplotlib import pyplot as plt
 
-def find_num_of_parity_bits(len_msg:int) -> int:
+
+def find_num_of_parity_bits(len_msg: int) -> int:
     k = 0
-    while 2**k <= len_msg+k+1:
-        k+=1
+    while 2 ** k < len_msg + k + 1:
+        k += 1
     return k
 
 
@@ -24,7 +25,7 @@ def find_num_of_parity_bits(len_msg:int) -> int:
 def find_parity_indices(k: int) -> list[int]:
     positions = []
     for n in range(k):
-        positions.append((2**n)-1)
+        positions.append((2 ** n) - 1)
     return positions
 
 
@@ -37,9 +38,9 @@ def get_indices_checked(p: int, n: int, k: int) -> list[int]:
     """
 
     indices = []
-    for a in range(n+k+1):
-        if a & (2**(p-1)):
-            indices.append(a-1)
+    for a in range(n + k):
+        if a & (2 ** (p - 1)):
+            indices.append(a - 1)
     return indices
 
 
@@ -48,59 +49,39 @@ def create_message(msg: str) -> str:
     output = []
     k = find_num_of_parity_bits(len(msg))
     pos = find_parity_indices(k)
+    # print(k, pos)
 
     msg_index = 0
-    for n in range(0, len(msg) + k):
-        if n in pos:  #Where a parity should be
+    for n in range(len(msg) + k):
+        if n in pos:  # Where a parity should be
             output.append(-1)
         else:
             output.append(msg[msg_index])  # Actual value of the message
             msg_index += 1
+    # print(output)
 
-    print(output)
+    check = []
+    for n in range(1, k + 1):
+        check.append(get_indices_checked(p=n, n=len(msg), k=k))
+    # print(check)
+    p_index = 0
+    for n in range(len(output)):
+        if n in pos:
+            num_1s = 0
+            for a in check[p_index][1:]:
+                # print(a)
+                if output[a] == "1":
+                    num_1s += 1
+            if num_1s % 2 == 1:
+                output[n] = "1"
+            else:
+                output[n] = "0"
+            p_index += 1
+    # print(output)
 
-    parity_values = []
-    for p in range(k): # P0 ~ Pk
-        num_ones = 0
-        for index in range(len(output)):
-            if (2**k) & index:
-                if output[index-1] == 1:
-                    num_ones += 1
-        if num_ones % 2 == 0:
-            parity_values.append('0')
-        else:
-            parity_values.append('1')
-    print(parity_values)  # Wrong parity values
+    return ''.join(output)
 
-    parity_index = 0
-    for n in range(len(output)):  #But otherwise kinda correct
-        if output[n] == -1:
-            output[n] = parity_values[parity_index]
-            parity_index += 1
 
-    return output
-
+# Test that it works:
 print(create_message(msg='1011'))
 
-
-
-
-
-
-# def create_message(msg: str) -> str:
-#     output = ""
-#     k = find_num_of_parity_bits(len(msg))
-#     pos = find_parity_indices(k)
-#     msg_index = 0
-#
-#     for n in range(0, len(msg)+k):
-#         if n in pos:
-#             output +=
-#         else:
-#             output += msg[msg_index]
-#             msg_index += 1
-#     return output
-
-
-# Test that it works
-# print(create_message("1011"))
