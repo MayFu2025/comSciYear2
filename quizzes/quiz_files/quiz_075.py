@@ -60,6 +60,7 @@ def create_message(msg: str) -> str:
             msg_index += 1
     # print(output)
 
+    # Quiz 079
     check = []
     for n in range(1, k + 1):
         check.append(get_indices_checked(p=n, n=len(msg), k=k))
