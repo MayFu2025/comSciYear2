@@ -1,5 +1,12 @@
-from quiz_075 import find_parity_indices, find_num_of_parity_bits, get_indices_checked
+# Quiz 079
+<hr>
 
+### Prompt
+![](images/quiz_079_slide.png)
+*fig. 1* **Screenshot of quiz slides**
+
+### Solution
+```.python
 def create_message(msg: str) -> str:
     output = []
     k = find_num_of_parity_bits(len(msg))
@@ -31,8 +38,11 @@ def create_message(msg: str) -> str:
             p_index += 1
 
     return ''.join(output)
-
-
+    
 # Test that it works:
 print(create_message(msg='1011'))
 print(create_message(msg='1111'))
+```
+### Evidence
+![](images/quiz_079_evidence.png)
+*fig. 2* **Screenshot of working/solution**
