@@ -1,4 +1,4 @@
-# Quiz_074
+# Quiz_073
 
 def build_packet(msg: str) -> str:
     return msg * 3
@@ -34,10 +34,5 @@ def check_for_error(packet: str) -> str:
         return "There is an uncorrectable error: length of packet not a multiple of 3, or characters other than 0 and 1 identified."
 
 
-check_packet = build_packet(msg='10011')
-print(check_for_error(check_packet))
-
-print(check_for_error('101001100'))
-
-print(check_for_error('1011'))
-print(check_for_error('102101'))
+print(check_for_error('100111001011001110010110011100101'))
+print(check_for_error('011101111101110111110111001111'))

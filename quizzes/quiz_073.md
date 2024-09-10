@@ -1,4 +1,4 @@
-# Quiz 073(4)?
+# Quiz 073
 <hr>
 
 ### Prompt
@@ -7,25 +7,38 @@
 
 ### Solution
 ```.python
-def check_error_with_parity_bit(bits:str) -> bool:
-    has_error = False
-    count = 0
-    for n in range(1, len(bits)):
-        if bits[n] == '1':
-            count += 1
-    if (bits[0]=='0') and (count % 2 != 1):  # Should have odd number of 1s
-        has_error = True
-    elif (bits[0]=='1') and (count % 2 != 0):  # Should have even number of 1s
-        has_error = True
-    return has_error
+def check_for_error(packet: str) -> str:
+    if (len(packet) % 3 == 0) and (packet.count('0') + packet.count('1') == len(packet)):
+        len_msg = len(packet) // 3
+        first = packet[:len_msg]
+        second = packet[len_msg:(2 * len_msg)]
+        third = packet[(2 * len_msg):(3 * len_msg)]
 
+        errors = []
+        corrected = ''
+        for n in range(0, len(first)):
+            if second[n] == third[n]:
+                corrected += second[n]  # taking the majority, hence regardless of first[n]
+                if first[n] != second[n]:
+                    errors.append(n + 1)  # plus one for the bit number which isn't the index number
+            elif second[n] != third[n]:
+                corrected += first[n]  # taking the majority, hence first[n] will always be the majority
+                if first[n] != second[n]:
+                    errors.append((n + 1) + len_msg)
+                elif first[n] != third[n]:
+                    errors.append((n + 1) + (2 * len_msg))
 
-# Check if it works
-has_error = check_error_with_parity_bit('1010101')
-if has_error:
-    print(f'There is an error in the data.')
-else:
-    print('The data is correct.')
+        if len(errors) != 0:
+            return f"There were errors at bits {errors}. The corrected message is {corrected}."
+        else:
+            return f"There were no errors. The correct message is {corrected}."
+
+    else:
+        return "There is an uncorrectable error: length of packet not a multiple of 3, or characters other than 0 and 1 identified."
+
+# Check that it works
+print(check_for_error('100111001011001110010110011100101'))
+print(check_for_error('011101111101110111110111001111'))
 ```
 ### Evidence
 ![](images/quiz_073_evidence.png)

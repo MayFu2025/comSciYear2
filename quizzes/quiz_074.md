@@ -1,4 +1,12 @@
 # Quiz 074
+<hr>
+
+### Prompt
+![](images/quiz_074_slide.png)
+*fig. 1* **Screenshot of quiz slides**
+
+### Solution
+```.python
 def check_error_with_parity_bit(bits:str) -> bool:
     has_error = False
     count = 0
@@ -15,3 +23,7 @@ def check_error_with_parity_bit(bits:str) -> bool:
 # Check if it works
 print(check_error_with_parity_bit('100111001011001110010110011100101'))
 print(check_error_with_parity_bit('011101111101110111110111001111'))
+```
+### Evidence
+![](images/quiz_074_evidence.png)
+*fig. 2* **Screenshot of working/solution**
