@@ -1,6 +1,6 @@
 def find_num_of_parity_bits(len_msg: int) -> int:
     k = 0
-    while (2 ** k) <= (len_msg + k + 1):
+    while (2 ** k) < (len_msg + k + 1):
         k += 1
     return k
 
@@ -16,7 +16,7 @@ print(find_parity_indices(4))
 print(find_parity_indices(5))
 
 # HL part:
-def create_list(n: int, k:int)->list[int]:
+def create_list(n: int)->list[int]:
     k = find_num_of_parity_bits(n)
     indices = find_parity_indices(k)
     output = []
@@ -25,4 +25,4 @@ def create_list(n: int, k:int)->list[int]:
             output.append(1)
         else:
             output.append(0)
-
+    return output
