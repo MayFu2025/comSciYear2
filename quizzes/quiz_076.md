@@ -5,6 +5,10 @@
 ![](images/quiz_076_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_076_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 def find_parity_indices(k: int) -> list[int]:
@@ -20,4 +24,4 @@ print(find_parity_indices(5))
 ```
 ### Evidence
 ![](images/quiz_076_evidence.png)
-*fig. 2* **Screenshot of working/solution**
+*fig. 3* **Screenshot of working/solution**

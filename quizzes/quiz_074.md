@@ -5,6 +5,10 @@
 ![](images/quiz_074_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_074_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 def check_error_with_parity_bit(bits:str) -> bool:
@@ -26,4 +30,4 @@ print(check_error_with_parity_bit('011101111101110111110111001111'))
 ```
 ### Evidence
 ![](images/quiz_074_evidence.png)
-*fig. 2* **Screenshot of working/solution**
+*fig. 3* **Screenshot of working/solution**

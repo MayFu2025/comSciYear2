@@ -5,6 +5,10 @@
 ![](images/quiz_079_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_079_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 def create_message(msg: str) -> str:
@@ -42,7 +46,8 @@ def create_message(msg: str) -> str:
 # Test that it works:
 print(create_message(msg='1011'))
 print(create_message(msg='1111'))
+print(create_message(msg='1001'))
 ```
 ### Evidence
 ![](images/quiz_079_evidence.png)
-*fig. 2* **Screenshot of working/solution**
+*fig. 3* **Screenshot of working/solution**

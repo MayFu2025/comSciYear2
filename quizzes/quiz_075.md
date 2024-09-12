@@ -5,6 +5,10 @@
 ![](images/quiz_075_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_075_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 from matplotlib import pyplot as plt
@@ -34,7 +38,7 @@ print(find_num_of_parity_bits(6))
 ```
 ### Evidence
 ![](images/quiz_075_evidence.png)
-*fig. 2* **Screenshot of working/solution**
+*fig. 3* **Screenshot of working/solution**
 
 ![](images/quiz_075_graph.png)
-*fig. 2* **Screenshot of graph of length of message against efficiency**
+*fig. 4* **Screenshot of graph of length of message against efficiency**

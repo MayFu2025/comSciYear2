@@ -5,6 +5,10 @@
 ![](images/quiz_077_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_077_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 def get_indices_checked(p: int, msg_len: int) -> list[int]:
@@ -27,4 +31,4 @@ print(get_indices_checked(msg_len=7, p=3))
 ```
 ### Evidence
 ![](images/quiz_077_evidence.png)
-*fig. 2* **Screenshot of working/solution**
+*fig. 3* **Screenshot of working/solution**

@@ -5,6 +5,10 @@
 ![](images/quiz_078_slide.png)
 *fig. 1* **Screenshot of quiz slides**
 
+### Working
+![](images/quiz_078_working.jpeg)
+*fig. 2* **Screenshot of working**
+
 ### Solution
 ```.python
 def create_message(msg: str) -> list:
