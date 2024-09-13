@@ -6,5 +6,5 @@
 *fig. 1* **Screenshot of quiz slides**
 
 ### Solution
-![](images/quiz_072_working.jpg)
+![](images/quiz_072_working.jpeg)
 *fig. 2* **Screenshot of working/solution**
